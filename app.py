@@ -8,14 +8,12 @@ from books_recommender.config.configuration import AppConfiguration
 from books_recommender.pipeline.training_pipeline import TrainingPipeline
 from books_recommender.exception.exception_handler import AppException
 
-
 class Recommendation:
     def __init__(self,app_config = AppConfiguration()):
         try:
             self.recommendation_config= app_config.get_recommendation_config()
         except Exception as e:
             raise AppException(e, sys) from e
-
 
     def fetch_poster(self,suggestion):
         try:
@@ -42,7 +40,6 @@ class Recommendation:
             raise AppException(e, sys) from e
         
 
-
     def recommend_book(self,book_name):
         try:
             books_list = []
@@ -62,7 +59,6 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
 
-
     def train_engine(self):
         try:
             obj = TrainingPipeline()
@@ -72,7 +68,6 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
 
-    
     def recommendations_engine(self,selected_books):
         try:
             recommended_books,poster_url = self.recommend_book(selected_books)
@@ -96,15 +91,12 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
 
-
-
 if __name__ == "__main__":
     st.header('End to End Books Recommender System')
     st.text("This is a collaborative filtering based recommendation system!")
 
     obj = Recommendation()
 
-    #Training
     if st.button('Train Recommender System'):
         obj.train_engine()
 
@@ -113,6 +105,5 @@ if __name__ == "__main__":
         "Type or select a book from the dropdown",
         book_names)
     
-    #recommendation
     if st.button('Show Recommendation'):
         obj.recommendations_engine(selected_books)
