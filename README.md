@@ -29,6 +29,7 @@ An end-to-end book recommendation system using collaborative filtering with a si
 ---
 
 ## Project Structure
+```
 Book-Recommendation-System/
 ├── app.py # Streamlit frontend
 ├── main.py # Entry script
@@ -42,6 +43,7 @@ Book-Recommendation-System/
 ├── book_dict.pkl # Dictionary of book metadata
 ├── requirements.txt # Project dependencies
 └── README.md # Documentation
+```
 
 ---
 
