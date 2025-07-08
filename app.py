@@ -71,7 +71,7 @@ class Recommendation:
     def recommendations_engine(self,selected_books):
         try:
             recommended_books,poster_url = self.recommend_book(selected_books)
-            col1, col2, col3, col4, col5 = st.columns(5)
+            col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.text(recommended_books[1])
                 st.image(poster_url[1])
@@ -84,14 +84,11 @@ class Recommendation:
             with col4:
                 st.text(recommended_books[4])
                 st.image(poster_url[4])
-            with col5:
-                st.text(recommended_books[5])
-                st.image(poster_url[5])
         except Exception as e:
             raise AppException(e, sys) from e
 
 if __name__ == "__main__":
-    st.header('End to End Books Recommender System')
+    st.header('Books Recommender System')
     st.text("This is a collaborative filtering based recommendation system!")
 
     obj = Recommendation()
