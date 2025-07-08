@@ -29,20 +29,7 @@ An end-to-end book recommendation system using collaborative filtering with a si
 ---
 
 ## Project Structure
-Book-Recommendation-System/
-├── app.py # Streamlit frontend
-├── main.py # Entry script
-├── components/ # Core logic (recommender, similarity)
-├── config.yaml # YAML configuration file
-├── config/
-│ └── configuration.py # Loads configurations
-├── entity/ # Data schema definitions
-├── pipeline/ # Data pipelines
-├── similarity.pkl # Precomputed similarity matrix
-├── book_dict.pkl # Dictionary of book metadata
-├── requirements.txt # Project dependencies
-└── README.md # Documentation
-
+<pre lang="markdown"><code> ## 📁 Project Structure ``` Book-Recommendation-System/ ├── app.py # Streamlit frontend ├── main.py # Entry script ├── components/ # Core logic (recommender, similarity) ├── config.yaml # YAML configuration file ├── config/ │ └── configuration.py # Loads configurations ├── entity/ # Data schema definitions ├── pipeline/ # Data pipelines ├── similarity.pkl # Precomputed similarity matrix ├── book_dict.pkl # Dictionary of book metadata ├── requirements.txt # Project dependencies └── README.md # Documentation ``` </code></pre>
 ---
 
 ## Setup Instructions (Local)
