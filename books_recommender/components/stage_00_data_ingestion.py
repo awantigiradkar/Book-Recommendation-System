@@ -10,7 +10,6 @@ from books_recommender.config.configuration import AppConfiguration
 class DataIngestion:
 
     def __init__(self, app_config = AppConfiguration()):
-
         try:
             logging.info(f"{'='*20}Data Ingestion log started.{'='*20} ")
             self.data_ingestion_config= app_config.get_data_ingestion_config()
@@ -19,7 +18,6 @@ class DataIngestion:
 
     
     def download_data(self):
-
         try:
             
             dataset_url = self.data_ingestion_config.dataset_download_url
@@ -37,7 +35,6 @@ class DataIngestion:
 
 
     def extract_zip_file(self,zip_file_path: str):
-
         try:
             ingested_dir = self.data_ingestion_config.ingested_dir
             os.makedirs(ingested_dir, exist_ok=True)

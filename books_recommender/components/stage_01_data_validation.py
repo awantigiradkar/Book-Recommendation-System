@@ -7,8 +7,6 @@ from books_recommender.logger.log import logging
 from books_recommender.config.configuration import AppConfiguration
 from books_recommender.exception.exception_handler import AppException
 
-
-
 class DataValidation:
     def __init__(self, app_config = AppConfiguration()):
         try:
@@ -16,12 +14,10 @@ class DataValidation:
         except Exception as e:
             raise AppException(e, sys) from e
 
-
-    
     def preprocess_data(self):
         try:
-            ratings = pd.read_csv(self.data_validation_config.ratings_csv_file, sep=";", on_bad_lines='skip', encoding='latin-1',low_memory=False)
-            books = pd.read_csv(self.data_validation_config.books_csv_file, sep=";", on_bad_lines='skip', encoding='latin-1',low_memory=False)
+            ratings = pd.read_csv(self.data_validation_config.ratings_csv_file, sep=";", on_bad_lines='skip', encoding='latin-1')
+            books = pd.read_csv(self.data_validation_config.books_csv_file, sep=";", on_bad_lines='skip', encoding='latin-1')
             
             logging.info(f" Shape of ratings data file: {ratings.shape}")
             logging.info(f" Shape of books data file: {books.shape}")

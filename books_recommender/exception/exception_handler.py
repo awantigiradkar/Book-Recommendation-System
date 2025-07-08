@@ -1,7 +1,6 @@
 import os
 import sys
 
-
 class AppException(Exception):
 
     def __init__(self, error_message: Exception, error_detail: sys):
@@ -19,7 +18,6 @@ class AppException(Exception):
         return error_message
 
     def __repr__(self):
-
         return AppException.__name__.__str__()
 
     def __str__(self):

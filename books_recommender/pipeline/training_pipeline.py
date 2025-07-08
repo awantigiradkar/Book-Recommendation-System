@@ -3,6 +3,7 @@ from books_recommender.components.stage_01_data_validation import DataValidation
 from books_recommender.components.stage_02_data_transformation import DataTransformation
 from books_recommender.components.stage_03_model_trainer import ModelTrainer
 
+
 class TrainingPipeline:
     def __init__(self):
         self.data_ingestion = DataIngestion()
@@ -15,4 +16,3 @@ class TrainingPipeline:
         self.data_validation.initiate_data_validation()
         self.data_transformation.initiate_data_transformation()
         self.model_trainer.initiate_model_trainer() 
-

@@ -14,10 +14,12 @@ class ModelTrainer:
         except Exception as e:
             raise AppException(e, sys) from e
 
+
     def train(self):
         try:
             book_pivot = pickle.load(open(self.model_trainer_config.transformed_data_file_dir,'rb'))
             book_sparse = csr_matrix(book_pivot)
+
             model = NearestNeighbors(algorithm= 'brute')
             model.fit(book_sparse)
 
@@ -28,7 +30,6 @@ class ModelTrainer:
 
         except Exception as e:
             raise AppException(e, sys) from e
-
 
     def initiate_model_trainer(self):
         try:

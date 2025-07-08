@@ -6,7 +6,6 @@ from books_recommender.logger.log import logging
 from books_recommender.config.configuration import AppConfiguration
 from books_recommender.exception.exception_handler import AppException
 
-
 class DataTransformation:
     def __init__(self, app_config = AppConfiguration()):
         try:
@@ -19,6 +18,7 @@ class DataTransformation:
     def get_data_transformer(self):
         try:
             df = pd.read_csv(self.data_transformation_config.clean_data_file_path)
+
             book_pivot = df.pivot_table(columns='user_id', index='title', values= 'rating')
             logging.info(f" Shape of book pivot table: {book_pivot.shape}")
             book_pivot.fillna(0, inplace=True)
@@ -40,7 +40,6 @@ class DataTransformation:
         except Exception as e:
             raise AppException(e, sys) from e
 
-    
 
     def initiate_data_transformation(self):
         try:

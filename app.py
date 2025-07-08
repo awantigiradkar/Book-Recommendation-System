@@ -8,6 +8,7 @@ from books_recommender.config.configuration import AppConfiguration
 from books_recommender.pipeline.training_pipeline import TrainingPipeline
 from books_recommender.exception.exception_handler import AppException
 
+
 class Recommendation:
     def __init__(self,app_config = AppConfiguration()):
         try:
@@ -39,7 +40,6 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
         
-
     def recommend_book(self,book_name):
         try:
             books_list = []
@@ -78,7 +78,6 @@ class Recommendation:
             with col2:
                 st.text(recommended_books[2])
                 st.image(poster_url[2])
-
             with col3:
                 st.text(recommended_books[3])
                 st.image(poster_url[3])

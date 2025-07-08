@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-## edit below variables as per your requirements -
+## edit below variables as per your requirements 
 REPO_NAME = "Books Recommender System"
 AUTHOR_USER_NAME = "Awanti Giradkar"
 SRC_REPO = "books_recommender"
