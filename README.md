@@ -1,7 +1,7 @@
 # Book-Recommendation-System
 An end-to-end book recommendation system using collaborative filtering with a simple, interactive UI built in Streamlit. It recommends books based on user input and displays book covers, titles, and authors. You can run it locally, on Streamlit Cloud, or deploy it using **Docker on AWS EC2**.
 
-🔗 **Live Demo**: [https://bookrecommendationsys.streamlit.app](https://bookrecommendationsys.streamlit.app)
+**Live Demo**: [https://bookrecommendationsys.streamlit.app](https://bookrecommendationsys.streamlit.app)
 
 ---
 
@@ -16,7 +16,38 @@ An end-to-end book recommendation system using collaborative filtering with a si
 
 ---
 
-## 🛠️ Tech Stack
+## What I Did 
+
+This project goes beyond UI and includes end-to-end machine learning components:
+
+### Data Preparation
+- Loaded and cleaned **book metadata** and **user ratings** datasets.
+- Filtered popular books using thresholding to ensure high-quality recommendations.
+- Handled missing values and merged datasets to create a unified feature space.
+
+### Model Development
+- Implemented **Collaborative Filtering** using a **cosine similarity matrix** on user-book interaction data.
+- Precomputed and stored the similarity matrix in `similarity.pkl` for efficient inference.
+
+### Content Pipeline
+- Created a `book_dict.pkl` to store metadata like title, author, and image URLs.
+- Developed a robust content retrieval mechanism that returns top N similar books using similarity scores.
+
+### Modular Pipeline Structure
+- Built reusable components inside the `components/`, `entity/`, and `pipeline/` folders.
+- Managed configuration using a `config.yaml` file and dynamic loading via `configuration.py`.
+
+### Deployment-Ready Design
+- Designed for **streamlit app deployment**.
+- Structured for **Docker containerization**.
+- Fully deployable on **AWS EC2**, making it production-friendly.
+
+### Reproducibility & Scalability
+- Code is modular and ready to plug into larger ML systems.
+- Easy to extend with additional models (e.g., matrix factorization, neural collaborative filtering).
+- Well-suited for experimentation with hybrid recommenders (collaborative + content-based).
+
+## Tech Stack
 
 | Layer        | Tool / Library             |
 |--------------|-----------------------------|
